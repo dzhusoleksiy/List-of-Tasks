@@ -29,9 +29,9 @@ const Task = ({task, toggleTask, removeTask, updateTask, isUpdating, handleIsUpd
         handleIsUpdated(null);
     }
 
-    let spanCls = 'grow mr-6';
+    let spanCls = 'grow mr-6 w-[860px]';
     if (task.done) {
-        spanCls += ' text-red-800 line-through'
+        spanCls += ' text-purple-300 line-through'
     }
 
     const removeTaskHandle = () => {
@@ -39,22 +39,22 @@ const Task = ({task, toggleTask, removeTask, updateTask, isUpdating, handleIsUpd
     }
 
     return (
-        <li className="flex items-center p-2 mb-3 rounded-lg">
+        <li className="custom-li">
+            <div onClick = {() => toggleTask(task.id)} className="mr-4">
+                <FaCheck style={{color: task.done ? 'rgba(196, 181, 253, var(--tw-text-opacity))' : 'rgba(139, 92, 246, var(--tw-text-opacity))'}} className="cursor-pointer" />
+            </div>
             <span onDoubleClick={handleIsUpdating} className={spanCls}>
-                {isUpdating ? <input className='custom-input' onChange={handleUpdateVal} ref = {inputRef} value={updateVal}/> : task.title}
+                {isUpdating ? <input className='custom-input' onChange={handleUpdateVal} ref = {inputRef} value={updateVal}/> : <span className='custom-task'>{task.title}</span>}
             </span>
             <div className='ml-auto flex'>
                 <div onClick={handleClickUpdate} className='mr-3'>
-                    <FaSave />
+                    <FaSave className="cursor-pointer text-purple-500"/>
                 </div>
             </div>
             <div className="ml-auto flex">
-            <div onClick = {() => toggleTask(task.id)} className="mr-4">
-                <FaCheck style={{color: task.done ? 'orange' : 'green'}} className="cursor-pointer" />
-            </div>
-            <div onClick = {removeTaskHandle}>
-                <FaTrash className="cursor-pointer" />
-            </div>
+                <div onClick = {removeTaskHandle}>
+                    <FaTrash className="cursor-pointer text-purple-500" />
+                </div>
             </div>
             <ToastContainer />
         </li>

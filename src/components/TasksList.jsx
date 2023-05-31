@@ -38,7 +38,7 @@ const TasksList = ({tasks, toggleTask, removeTask, updateTask}) => {
   }
 
   return (
-    <section className="w-[1000px] mx-auto bg-white shadow-md"> 
+    <section className="custom-list-section"> 
         <TaskFilter handleSelectChange={handleSelectChange} handleTextChange={handleTextChange}/>
         <ul ref={ref} className="">
           {filteredTasks.map((task) => (

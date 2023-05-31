@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import { useState } from "react";
 import { toast } from 'react-toastify';
 import { generate as id} from 'shortid';
+import { AiOutlinePlus } from "react-icons/ai";
 
 const TaskForm = ({addTask}) => {
 
@@ -21,22 +22,21 @@ const TaskForm = ({addTask}) => {
   }
 
   return (
-    <section className="flex flex-row w-max items-center">
-        <p className="text-amber-600 self-center text-2xl px-4">Add task</p>
+    <section className="custom-new-task-section">
         <form onSubmit={handleSubmit} className="" autoComplete="off">
         <div>
             <input value={value} onChange={handleChange}
             type="text"
             name="title"
             id="title"
-            placeholder="Add task"
-            className="border border-gray-300 px-3 py-2 mr-4 bg-white focus:outline-none focus:border-gray-500"
+            placeholder="Your task is..."
+            className="custom-new-input"
             />
             <button
             type="submit"
-            className="px-4 py-2 bg-blue-500 rounded-md text-white"
+            className="custom-new-button"
             >
-            Add Task
+            Add
             </button>
         </div>
         </form>

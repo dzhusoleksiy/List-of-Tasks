@@ -5,7 +5,6 @@ const TaskInfo = ({tasks}) => {
   const done = tasks.filter(t => t.done).length;
   const remain = total - done;
   let remainMessage = <span></span>
-  let totalMessage = <span>There are {total} Tasks in the List</span>
 
   if (remain == 0) {
     remainMessage = <span>You Have Done Everything</span>
@@ -16,14 +15,10 @@ const TaskInfo = ({tasks}) => {
   }
 
   return (
-    <div className="flex flex-row justify-around my-5 text-2xl bg-purple-300 shadow-md">
-        <p className="">
-        <span id="tasks-total">{totalMessage}</span>
-        </p>
-        <p className="">
-        <span id="tasks-remain">{remainMessage}</span>
-        </p>
-    </div>
+    <section className="custom-task-section-info">
+        <div className="custom-task-info"><p>There are {total} Tasks in the List</p></div>
+        <div className="custom-task-info"><p>{remainMessage}</p></div>
+    </section>
   )
 }
 

@@ -23,9 +23,9 @@ function App() {
   }
 
   return (
-    <section className="w-[1000px] mx-auto">
-      <div className="flex flex-row bg-purple-300 shadow-md">
-        <h3 className="text-center mb-4 mt-3 text-4xl mr-auto">List of tasks</h3>
+    <section className="custom-app-section">
+      <div className="custom-header-wrapper">
+        <h3 className="custom-header">List of tasks</h3>
         <TaskForm addTask = {addTask}/>
       </div>
       <TaskInfo tasks = {tasks}/>

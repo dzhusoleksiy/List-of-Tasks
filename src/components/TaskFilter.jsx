@@ -2,10 +2,10 @@ import PropTypes from "prop-types"
 
 const TaskFilter = ({handleSelectChange, handleTextChange}) => {
     return (
-        <div className="flex mb-4">
+        <section className="custom-filter-section">
             <select 
                 onChange={handleSelectChange}
-                className="flex-1 mr-3 p-2 focus:outline-none bg-white border border-gray-400"
+                className="custom-filter-select"
             >
                 <option value="1">Show all tasks</option>
                 <option value="2">Show Done</option>
@@ -15,10 +15,11 @@ const TaskFilter = ({handleSelectChange, handleTextChange}) => {
             <input
                 onChange={(e) => handleTextChange(e.target.value)}
                 type="text"
-                className="flex-1 border border-gray-400 focus:outline-none"
+                placeholder="Search..."
+                className="custom-filter-input"
                 name="search-tasks"
             />
-        </div>
+        </section>
     )
   }
   

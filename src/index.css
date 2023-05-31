@@ -1,14 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer components {
+    .custom-app-section {
+        @apply px-3 mt-3 sm:w-[90%] sm:mt-5 sm:px-0 md:w-[80%] lg:w-[70%] xl:w-[60%] 2xl:w-[55%] mx-auto;
+    }
+    .custom-header-wrapper {
+        @apply flex flex-col sm:flex-row bg-purple-300 shadow-md rounded-lg;
+    }
+    .custom-header {
+        @apply text-center sm:mr-auto text-white my-3 text-4xl px-5;
+    }
+    .custom-new-task-section {
+        @apply flex flex-row justify-center mb-3 sm:mb-0 items-center sm:pr-3;
+    }
+    .custom-new-input {
+        @apply w-[200px] sm:w-[225px] border-gray-300 px-3 py-2 rounded-l-lg bg-white focus:outline-none border-0;
+    }
+    .custom-new-button {
+        @apply px-4 py-2 bg-purple-500 rounded-r-lg text-white;
+    }
+    .custom-task-section-info {
+        @apply flex flex-row justify-between my-8 text-2xl text-center text-white;
+    }
+    .custom-task-info {
+        @apply w-[45%] bg-purple-300 shadow-md py-3 px-5 rounded-lg;
+    }
+    .custom-filter-section {
+        @apply flex justify-between my-8;
+    }
+    .custom-filter-select {
+        @apply w-[45%] py-3 px-5 rounded-lg shadow focus:outline-none bg-white text-purple-500;
+    }
+    .custom-filter-input {
+        @apply w-[45%] py-3 px-5 rounded-lg shadow focus:outline-none;
+    }
+    .custom-list-section {
+        @apply mx-auto;
+    }
+    .custom-li {
+        @apply flex items-center py-3 px-5 my-3 rounded-lg bg-white shadow-md text-purple-500;
+    }
     .custom-input {
-        @apply border-[1px] border-slate-600 px-2 py-1 w-full focus:outline-none focus:border-red-600 focus:border-2;
+        @apply w-full focus:outline-none focus:border-purple-600 focus:border-0 focus:p-0 select-text;
+    }
+    .custom-task {
+        @apply w-full;
     }
 }
 
 body {
     --tw-bg-opacity: 1;
     background-color: rgba(237, 233, 254, var(--tw-bg-opacity));
+    font-family: 'Poppins', sans-serif;
+    user-select: none;
 }
