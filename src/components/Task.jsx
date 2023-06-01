@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
-import { FaTrash, FaCheck, FaSave } from "react-icons/fa";
+import { FaTrash, FaCheck, FaSave, FaPencilAlt } from "react-icons/fa";
+import { MdCancel } from "react-icons/md";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useState, useRef, useEffect } from "react";
@@ -38,22 +39,43 @@ const Task = ({task, toggleTask, removeTask, updateTask, isUpdating, handleIsUpd
         removeTask(task.id).then(() =>  toast.success("Task has been successfully deleted!"))
     }
 
+    const handleTextArea = (e) => {
+        let temp_value = e.target.value
+        e.target.value = ''
+        e.target.value = temp_value
+        e.target.style.height = 'inherit';
+        e.target.style.height = `${e.target.scrollHeight}px`; 
+    }
+
     return (
         <li className="custom-li">
             <div onClick = {() => toggleTask(task.id)} className="mr-4">
-                <FaCheck style={{color: task.done ? 'rgba(196, 181, 253, var(--tw-text-opacity))' : 'rgba(139, 92, 246, var(--tw-text-opacity))'}} className="cursor-pointer" />
+                <FaCheck size={20} style={{color: task.done ? 'rgba(196, 181, 253, var(--tw-text-opacity))' : 'rgba(139, 92, 246, var(--tw-text-opacity))'}} className="cursor-pointer" />
             </div>
-            <span onDoubleClick={handleIsUpdating} className={spanCls}>
-                {isUpdating ? <input className='custom-input' onChange={handleUpdateVal} ref = {inputRef} value={updateVal}/> : <span className='custom-task'>{task.title}</span>}
+            <span className={spanCls}>
+                {isUpdating ? <textarea className='custom-input' onFocus={handleTextArea} onChange={handleUpdateVal} ref = {inputRef} value={updateVal}/> : <span className='custom-task'>{task.title}</span>}
             </span>
-            <div className='ml-auto flex'>
-                <div onClick={handleClickUpdate} className='mr-3'>
-                    <FaSave className="cursor-pointer text-purple-500"/>
+            <div className="custom-buttons">
+                <div className='custom-button'>
+                    {isUpdating ? 
+                        <div onClick={handleIsUpdating} className='mr-3'>
+                            <MdCancel size={24} className="cursor-pointer text-purple-500"/>
+                        </div> 
+                        :
+                        <div onClick={handleIsUpdating} className='mr-3'>
+                            <FaPencilAlt size={20} className="cursor-pointer text-purple-500"/>
+                        </div>
+                    }
                 </div>
-            </div>
-            <div className="ml-auto flex">
-                <div onClick = {removeTaskHandle}>
-                    <FaTrash className="cursor-pointer text-purple-500" />
+                <div className='custom-button'>
+                    <div onClick={handleClickUpdate} className='mr-3'>
+                        <FaSave size={20} className="cursor-pointer text-purple-500"/>
+                    </div>
+                </div>
+                <div className="custom-button">
+                    <div onClick = {removeTaskHandle}>
+                        <FaTrash size={20} className="cursor-pointer text-purple-500" />
+                    </div>
                 </div>
             </div>
             <ToastContainer />

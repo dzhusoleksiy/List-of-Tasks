@@ -23,19 +23,19 @@
         @apply px-4 py-2 bg-purple-500 rounded-r-lg text-white;
     }
     .custom-task-section-info {
-        @apply flex flex-row justify-between my-8 text-2xl text-center text-white;
+        @apply flex flex-col sm:flex-row justify-between mt-5 mb-2 sm:mb-8 sm:mt-8 text-2xl text-center text-white;
     }
     .custom-task-info {
-        @apply w-[45%] bg-purple-300 shadow-md py-3 px-5 rounded-lg;
+        @apply sm:w-[45%] mb-3 sm:mb-0 bg-purple-300 shadow-md py-3 px-5 rounded-lg;
     }
     .custom-filter-section {
-        @apply flex justify-between my-8;
+        @apply flex flex-col sm:flex-row justify-between mb-5 sm:mb-8 sm:mt-8;
     }
     .custom-filter-select {
-        @apply w-[45%] py-3 px-5 rounded-lg shadow focus:outline-none bg-white text-purple-500;
+        @apply sm:w-[45%] py-3 px-5 mb-3 sm:mb-0 rounded-lg shadow focus:outline-none bg-white text-purple-500;
     }
     .custom-filter-input {
-        @apply w-[45%] py-3 px-5 rounded-lg shadow focus:outline-none;
+        @apply sm:w-[45%] py-3 px-5 rounded-lg shadow focus:outline-none;
     }
     .custom-list-section {
         @apply mx-auto;
@@ -44,10 +44,16 @@
         @apply flex items-center py-3 px-5 my-3 rounded-lg bg-white shadow-md text-purple-500;
     }
     .custom-input {
-        @apply w-full focus:outline-none focus:border-purple-600 focus:border-0 focus:p-0 select-text;
+        @apply resize-none w-full focus:outline-none focus:border-purple-600 focus:border-0 focus:p-0;
     }
     .custom-task {
         @apply w-full;
+    }
+    .custom-buttons {
+        @apply flex flex-col w-[22px] sm:flex-row sm:w-[84px];
+    }
+    .custom-button {
+        @apply ml-auto flex my-1 sm:my-0;
     }
 }
 
@@ -55,5 +61,4 @@ body {
     --tw-bg-opacity: 1;
     background-color: rgba(237, 233, 254, var(--tw-bg-opacity));
     font-family: 'Poppins', sans-serif;
-    user-select: none;
 }
