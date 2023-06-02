@@ -3,6 +3,7 @@ import { useState } from "react";
 import TaskInfo from "./components/TaskInfo";
 import TasksList from "./components/TasksList";
 import data from "./data"
+import { ToastContainer } from 'react-toastify';
 
 function App() {
   const [tasks, setTasks] = useState([...data]);
@@ -12,9 +13,6 @@ function App() {
       tasks.map((t) => (t.id === id ? {...t, done: !t.done} : t))
     );
   const removeTask = async (id) => {
-    if (!window.confirm("Are you sure?")) {
-      return;
-    }
     setTasks((tasks) => tasks.filter((t) => t.id !== id));
   };
 
@@ -30,6 +28,18 @@ function App() {
       </div>
       <TaskInfo tasks = {tasks}/>
       <TasksList tasks = {tasks} toggleTask = {toggleTask} removeTask = {removeTask} updateTask = {updateTask}/>
+      <ToastContainer 
+        position="bottom-center"
+        autoClose={3000}
+        hideProgressBar={false}
+        newestOnTop
+        closeOnClick={false}
+        rtl={false}
+        pauseOnFocusLoss={false}
+        draggable
+        pauseOnHover
+        theme="colored"
+      />
     </section>
   );
 }

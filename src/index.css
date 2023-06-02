@@ -5,55 +5,52 @@
 
 @layer components {
     .custom-app-section {
-        @apply px-3 mt-3 sm:w-[90%] sm:mt-5 sm:px-0 md:w-[80%] lg:w-[70%] xl:w-[60%] 2xl:w-[55%] mx-auto;
+        @apply px-3 mt-3 mx-auto sm:w-[90%] sm:mt-5 sm:px-0 md:w-[80%] lg:w-[70%] xl:w-[60%] 2xl:w-[55%];
     }
     .custom-header-wrapper {
-        @apply flex flex-col sm:flex-row bg-purple-300 shadow-md rounded-lg;
+        @apply flex flex-col bg-purple-300 shadow-md rounded-lg sm:flex-row;
     }
     .custom-header {
-        @apply text-center sm:mr-auto text-white my-3 text-4xl px-5;
+        @apply text-center text-white my-3 text-4xl px-5 sm:mr-auto;
     }
     .custom-new-task-section {
-        @apply flex flex-row justify-center mb-3 sm:mb-0 items-center sm:pr-3;
+        @apply flex flex-row justify-center mb-3 items-center sm:mb-0 sm:pr-3;
     }
     .custom-new-input {
-        @apply w-[200px] sm:w-[225px] border-gray-300 px-3 py-2 rounded-l-lg bg-white focus:outline-none border-0;
+        @apply w-[200px] border-gray-300 px-3 py-2 rounded-l-lg bg-white focus:outline-none border-0 sm:w-[225px];
     }
     .custom-new-button {
         @apply px-4 py-2 bg-purple-500 rounded-r-lg text-white;
     }
     .custom-task-section-info {
-        @apply flex flex-col sm:flex-row justify-between mt-5 mb-2 sm:mb-8 sm:mt-8 text-2xl text-center text-white;
+        @apply flex flex-col justify-between mt-5 mb-2 text-2xl text-center text-white sm:mb-8 sm:flex-row sm:mt-8;
     }
     .custom-task-info {
-        @apply sm:w-[45%] mb-3 sm:mb-0 bg-purple-300 shadow-md py-3 px-5 rounded-lg;
+        @apply mb-3 sm:mb-0 bg-purple-300 shadow-md py-3 px-5 rounded-lg sm:w-[45%];
     }
     .custom-filter-section {
         @apply flex flex-col sm:flex-row justify-between mb-5 sm:mb-8 sm:mt-8;
     }
     .custom-filter-select {
-        @apply sm:w-[45%] py-3 px-5 mb-3 sm:mb-0 rounded-lg shadow focus:outline-none bg-white text-purple-500;
+        @apply py-3 px-5 mb-3 sm:mb-0 rounded-lg shadow focus:outline-none bg-white text-purple-500 sm:w-[45%];
     }
     .custom-filter-input {
-        @apply sm:w-[45%] py-3 px-5 rounded-lg shadow focus:outline-none;
-    }
-    .custom-list-section {
-        @apply mx-auto;
+        @apply py-3 px-5 rounded-lg shadow focus:outline-none sm:w-[45%]; 
     }
     .custom-li {
         @apply flex items-center py-3 px-5 my-3 rounded-lg bg-white shadow-md text-purple-500;
     }
     .custom-input {
-        @apply resize-none w-full focus:outline-none focus:border-purple-600 focus:border-0 focus:p-0;
-    }
-    .custom-task {
-        @apply w-full;
+        @apply resize-none h-full w-full focus:outline-none border-purple-500 border p-1;
     }
     .custom-buttons {
         @apply flex flex-col w-[22px] sm:flex-row sm:w-[84px];
     }
     .custom-button {
         @apply ml-auto flex my-1 sm:my-0;
+    }
+    .custom-cancel-button {
+        @apply -mt-[2px] -ml-[2px] text-purple-500 cursor-pointer;
     }
 }
 

@@ -2,7 +2,6 @@ import PropTypes from 'prop-types';
 import { useState } from "react";
 import { toast } from 'react-toastify';
 import { generate as id} from 'shortid';
-import { AiOutlinePlus } from "react-icons/ai";
 
 const TaskForm = ({addTask}) => {
 
@@ -11,7 +10,7 @@ const TaskForm = ({addTask}) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if(!value.trim().length) {
-      toast.warn("Input task title!");
+      toast.warning("Type your task!");
       return
     }
     const newTask = {id: id(), title: value, done: false};

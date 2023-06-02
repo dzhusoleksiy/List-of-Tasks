@@ -1,5 +1,5 @@
 import { useState, useMemo, useRef } from "react"
-import PropTypes, { func } from 'prop-types';
+import PropTypes from 'prop-types';
 import Task from './Task'
 import TaskFilter from './TaskFilter'
 import useClickOutside from "../hooks/useClickOutside";
@@ -38,7 +38,7 @@ const TasksList = ({tasks, toggleTask, removeTask, updateTask}) => {
   }
 
   return (
-    <section className="custom-list-section"> 
+    <section className="mx-auto"> 
         <TaskFilter handleSelectChange={handleSelectChange} handleTextChange={handleTextChange}/>
         <ul ref={ref} className="">
           {filteredTasks.map((task) => (

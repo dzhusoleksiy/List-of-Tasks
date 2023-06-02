@@ -7,9 +7,9 @@ const TaskFilter = ({handleSelectChange, handleTextChange}) => {
                 onChange={handleSelectChange}
                 className="custom-filter-select"
             >
-                <option value="1">Show all tasks</option>
-                <option value="2">Show Done</option>
-                <option value="3">Show Remain</option>
+                <option value="1">Everything Everywhere All at Once</option>
+                <option value="2">Finished Tasks</option>
+                <option value="3">Remaining Tasks</option>
             </select>
     
             <input
