@@ -32,7 +32,7 @@
         @apply flex flex-col sm:flex-row justify-between mb-5 sm:mb-8 sm:mt-8;
     }
     .custom-filter-select {
-        @apply py-3 px-5 mb-3 sm:mb-0 rounded-lg shadow focus:outline-none bg-white text-purple-500 sm:w-[45%];
+        @apply py-3 px-5 mb-3 cursor-pointer sm:mb-0 rounded-lg shadow focus:outline-none bg-white text-purple-500 sm:w-[45%];
     }
     .custom-filter-input {
         @apply py-3 px-5 rounded-lg shadow focus:outline-none sm:w-[45%]; 
