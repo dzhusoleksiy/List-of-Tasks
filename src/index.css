@@ -3,6 +3,12 @@
 @tailwind components;
 @tailwind utilities;
 
+select{
+    -moz-appearance: none; 
+    -webkit-appearance: none; 
+    appearance: none;
+}
+
 @layer components {
     .custom-app-section {
         @apply px-3 mt-3 mx-auto sm:w-[90%] sm:mt-5 sm:px-0 md:w-[80%] lg:w-[70%] xl:w-[60%] 2xl:w-[55%];
@@ -14,13 +20,13 @@
         @apply text-center text-white my-3 text-4xl px-5 sm:mr-auto;
     }
     .custom-new-task-section {
-        @apply flex flex-row justify-center mb-3 items-center sm:mb-0 sm:pr-3;
+        @apply flex flex-row justify-center mb-3 items-center sm:mb-0 sm:mr-[10px];
     }
     .custom-new-input {
-        @apply w-[200px] border-gray-300 px-3 py-2 rounded-l-lg bg-white focus:outline-none border-0 sm:w-[225px];
+        @apply w-[200px] mr-[10px] border-gray-300 px-3 py-2 rounded-lg bg-white focus:outline-none border-0 sm:w-[225px];
     }
     .custom-new-button {
-        @apply px-4 py-2 bg-purple-500 rounded-r-lg text-white;
+        @apply px-4 py-2 bg-purple-500 rounded-lg text-white;
     }
     .custom-task-section-info {
         @apply flex flex-col justify-between mt-5 mb-2 text-2xl text-center text-white sm:mb-8 sm:flex-row sm:mt-8;
